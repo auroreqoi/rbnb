@@ -1,3 +1,5 @@
+require "open-uri"
+
 Reservation.destroy_all
 Hive.destroy_all
 User.destroy_all
@@ -9,10 +11,25 @@ User.destroy_all
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-corentin = User.create!(first_name: "Carissa", last_name: "Proctor", email: "corentin@test.com", password: "password")
-shiyun = User.create!(first_name: "Kaleigh", last_name: "Mcgrath", email: "shiyun@test.com", password: "password")
-val = User.create!(first_name: "Ralph", last_name: "Duke", email: "valentin@test.com", password: "password")
-aurore = User.create!(first_name: "Ishaan", last_name: "Wiggins", email: "aurore@test.com", password: "password")
+corentin = User.new(first_name: "Corentin", last_name: "Proctor", email: "corentin@test.com", password: "password")
+file_corentin = File.open("db/fixtures/corentin.jpeg")
+corentin.photo.attach(io: file_corentin, filename: 'corentin.jpeg', content_type: 'image/jpeg')
+corentin.save!
+
+shiyun = User.create!(first_name: "Shiyun", last_name: "Mcgrath", email: "shiyun@test.com", password: "password")
+file_shiyun = File.open("db/fixtures/shiyun.jpeg")
+shiyun.photo.attach(io: file_shiyun, filename: 'shiyun.jpeg', content_type: 'image/jpeg')
+shiyun.save!
+
+val = User.create!(first_name: "Val", last_name: "Duke", email: "valentin@test.com", password: "password")
+file_val = File.open("db/fixtures/val.png")
+val.photo.attach(io: file_val, filename: 'val.png', content_type: 'image/png')
+val.save!
+
+aurore = User.create!(first_name: "Aurore", last_name: "Wiggins", email: "aurore@test.com", password: "password")
+file_aurore = File.open("db/fixtures/aurore.jpeg")
+aurore.photo.attach(io: file_aurore, filename: 'aurore.jpeg', content_type: 'image/jpeg')
+aurore.save!
 
 hive_shiyun_1 = Hive.create!(queen: shiyun, name: "ruche blue", description: "une belle ruche située dans les arbres", address: "Rennes", price_per_day: 3)
 hive_shiyun_2 = Hive.create!(queen: shiyun, name: "ruche red", description: "une grande ruche située dans la montagen", address: "Nantes", price_per_day: 6)

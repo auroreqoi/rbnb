@@ -1,0 +1,18 @@
+<%= render "shared/navbar" %>
+
+<div class="index-container">
+  <div class="card-container">
+    <% @hives.each do |hive| %>
+      <div class='card-product-infos'>
+      <%= hive.name %>
+      <%= hive.address %>
+      <%= hive.description %>
+      </div>
+      <div class="card-product-price">
+      <%= hive.price_per_day %>
+      </div>
+    <% end %>
+  </div>
+  <div class="map-container">
+  </div>
+</div>

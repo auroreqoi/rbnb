@@ -1,18 +1,24 @@
 <%= render "shared/navbar" %>
 
 <div class="index-container">
-  <div class="card-container">
+  <div class="card-product">
     <% @hives.each do |hive| %>
-      <div class='card-product-infos'>
-      <%= hive.name %>
-      <%= hive.address %>
-      <%= hive.description %>
-      </div>
-      <div class="card-product-price">
-      <%= hive.price_per_day %>
+      <div class="card">
+        <%= cl_image_tag hive.photo.key %>
+        <div class='card-product-infos'>
+          <h2><%= hive.name.capitalize %></h2>
+          <h3><%= hive.address %></h3>
+          <p><%= hive.description %></p>
+        </div>
+          <div class="card-product-price">
+        <h3><%= hive.price_per_day %></h3>
+        <p>pollens per day</p>
+        </div>
       </div>
     <% end %>
   </div>
   <div class="map-container">
+  <img id="map"
+    src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiYXVyb3JlcW9pIiwiYSI6ImNsMnVobTkwcjAyNmkzZG96ZzEzM244bXkifQ.o8ydSJ-o-KbMNUUZv7VPYw'>
   </div>
 </div>

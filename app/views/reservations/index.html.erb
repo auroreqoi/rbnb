@@ -1,0 +1,19 @@
+<div class="container">
+
+  <div class="mt-5" >
+
+    <%= @reservations.each do |reservation| %>
+      <p><strong> Date de début:</strong></p>
+      <p><%= reservation.start_date %></p>
+      <p><strong> Date de fin:</strong></p>
+      <p><%= reservation.end_date %></p>
+      <p><strong> Prix total:</strong></p>
+      <p><%= reservation.total_price = (reservation.end_date - reservation.start_date) * reservation.hive.price_per_day %></p>
+      <p><strong> Etat:</strong></p>
+      <p><%= reservation.status %></p>
+
+      <p>___________________________________</p>
+    <% end %>
+
+  </div>
+</div>

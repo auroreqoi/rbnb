@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class ="d-flex justify-content-center mt-5">All my reservations</h1>
+
+  <% @reservations.each do |reservation|%>
+    <li><%= reservation.start_date %></li>
+    <li><%= reservation.end_date %></li>
+    <li><%= reservation.total_price %></li>
+    <li><%= reservation.status %></li>
+  <% end %>
+
+  <p>-------------------------------------</p>
+
+  <br>
+  <br>
+
+  <%= link_to 'Back', hives_path %> |
+</div>

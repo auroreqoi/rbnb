@@ -6,16 +6,16 @@
 
 .card-product {
   overflow: hidden;
-    background: white;
-    margin-top: 24px;
-    margin-right: 12px;
-    margin-left: 24px;
-    display: flex;
-    flex-direction: column;
-    align-content: stretch;
-    justify-content: flex-start;
-    align-items: center;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background: white;
+  margin-top: 24px;
+  margin-right: 12px;
+  margin-left: 24px;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .card {
@@ -54,7 +54,7 @@
 .card h3 {
   font-size: 24px;
   font-weight: bold;
-  color: rgb(50, 49, 49)
+  color: rgb(50, 49, 49);
 }
 
 .card p {

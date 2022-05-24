@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
   def index
+    @reservations = current_user.reservations.all
   end
 
   def new
@@ -8,9 +9,9 @@ class ReservationsController < ApplicationController
   def create
   end
 
-  def accept
+  def accept!
   end
 
-  def decline
+  def decline!
   end
 end

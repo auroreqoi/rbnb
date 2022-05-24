@@ -1,0 +1,44 @@
+<div class="container">
+
+  <h1 class="text-center mt-4">Liste de mes réservations</h1>
+
+  <div class="cards-index-reserv-user">
+
+    <% @reservations.each do |reservation| %>
+      <div class="card-product-index-reserv-user d-flex p-2 mb-5">
+        <%= cl_image_tag reservation.hive.photo.key, crop: :fill %>
+
+        <div class="card-product-index-reserv-user-infos">
+
+          <div class="card-product-index-reserv-user-infos-date">
+            <div class="card-product-index-reserv-user-infos-date-left">
+              <h2><strong>Date de réservations</strong></h2>
+              <p>Du <%= reservation.start_date %> </p>
+              <p>Au <%= reservation.end_date %></p>
+            </div>
+
+            <div class="card-product-index-reserv-user-infos-date-right">
+              <h2><strong>Nombre de jours:</strong></h2>
+              <p><%= (reservation.end_date - reservation.start_date).to_i %> jours</p>
+              <h2><strong>Prix par jour:</strong></h2>
+              <p><%= (reservation.hive.price_per_day) %>€/jour</p>
+            </div>
+          </div>
+
+          <div class="card-product-index-reserv-user-infos-price">
+            <p><%= (reservation.hive.price_per_day) %>€x<%= (reservation.end_date - reservation.start_date).to_i %> jours</p>
+            <h3><strong>Total: <%= reservation.total_price %> €</strong></h3>
+          </div>
+
+          <div class="card-product-index-reserv-user-infos-pending">
+            <p><span>Status:</span> <%= reservation.status.capitalize %></p>
+          </div>
+        </div>
+
+
+      </div>
+    <% end %>
+
+  </div>
+
+</div>

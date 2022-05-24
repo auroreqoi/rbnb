@@ -1,16 +1,8 @@
 class HivesController < ApplicationController
   def new
-    @hive = Hive.new
   end
 
   def create
-    @hive = Hive.new(hive_params)
-    @hive.save
-    if @hive.save
-      redirect_to hive_path(@hive)
-    else
-      render :new
-    end
   end
 
   def show

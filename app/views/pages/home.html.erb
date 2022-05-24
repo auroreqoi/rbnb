@@ -1,2 +1,28 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<!--NavBar-->
+<%= render "shared/navbar" %>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=image_path 'home_hive.jpg'%>)">
+  <div class="container">
+    <h1>Air Bee n Be <strong>des ruches</strong> pour <strong>des abeilles</strong>!</h1>
+    <p>Louez et réservez des ruches a travers le monde pour quelques pollens!</p>
+    <%= link_to "Réservez maintenant !", reservations_path, class: "btn btn-flat" %>
+  </div>
+</div>
+
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path 'ruche_aménagé.jpg'%>)">
+    Ruche Aménagé
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path 'nature.jpg'%>)">
+    Retour à la Nature
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path 'famille_nombreuse.jpg'%>)">
+    Famille Nombreuse
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path 'love_hive.jpg'%>)">
+    Abeilles amoureuses
+  </div>
+</div>

@@ -3,18 +3,28 @@
 <div class="index-container">
   <div class="card-product">
     <% @hives.each do |hive| %>
-      <div class="card">
-        <%= cl_image_tag hive.photo.key %>
-        <div class='card-product-infos'>
-          <h2><%= hive.name.capitalize %></h2>
-          <h3><%= hive.address %></h3>
-          <p><%= hive.description %></p>
-        </div>
+      <%= link_to hive_path(hive), class: 'card' do%>
+          <%= cl_image_tag hive.photo.key %>
+          <div class='card-product-infos'>
+            <h2>
+              <i class="fab fa-forumbee"></i>
+              <%= hive.name.capitalize %>
+            </h2>
+            <h3>
+              <i class="fas fa-map-marker-alt"></i>
+              <%= hive.address %>
+            </h3>
+            <p>
+              <i class="fas fa-comment"></i>
+              <%= hive.description %>
+            </p>
+          </div>
           <div class="card-product-price">
-        <h3><%= hive.price_per_day %></h3>
-        <p>pollens per day</p>
-        </div>
-      </div>
+            <h2><%= hive.price_per_day.to_i %></h2>
+            <p>p / jour</p>
+            <i class="fas fa-heart fa-heart-hive"></i>
+          </div>
+      <% end %>
     <% end %>
   </div>
   <div class="map-container">

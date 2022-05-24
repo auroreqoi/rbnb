@@ -9,9 +9,18 @@ class ReservationsController < ApplicationController
   def create
   end
 
-  def accept!
+  def accept
+    @reservation = Reservation.find(params[:id])
+    @reservation.status = "accepted"
+    @reservation.save
+    redirect_to queen_reservations_path
   end
 
-  def decline!
+  def decline
+    @reservation = Reservation.find(params[:id])
+    @reservation.status = "declined"
+    @reservation.save
+    redirect_to queen_reservations_path
   end
 end
+

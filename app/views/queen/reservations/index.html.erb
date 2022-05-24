@@ -1,17 +1,26 @@
-<div class="container">
-  <h1 class ="d-flex justify-content-center mt-5">All my reservations</h1>
+<%#  As a queen je veux voir la liste des réservations sur mes ruches %>
+<%#  Il faut créer un index de toutes les réservations en cours et à venir %>
 
-  <% @reservations.each do |reservation|%>
-    <li><%= reservation.start_date %></li>
-    <li><%= reservation.end_date %></li>
-    <li><%= reservation.total_price %></li>
-    <li><%= reservation.status %></li>
-  <% end %>
+<%# pour chaque réservation, je veux afficher le nom de l'user qui a fait la réservation, les dates %>
 
-  <p>-------------------------------------</p>
+<h1> All reservations on my hives</h1>
 
-  <br>
-  <br>
-
-  <%= link_to 'Back', hives_path %> |
-</div>
+<% @reservations.each do |reservation| %>
+  <div class="cards-queen">
+    <%= cl_image_tag reservation.hive.photo.key, height: 300, width: 400, crop: :fill %>
+    <div class = "cards-queen-infos">
+      <p>Locataire: <%= reservation.user.first_name %></p>
+      <p>Ruche réservée: <%= reservation.hive.name %></p>
+      <p>Prix Total: <%= reservation.total_price %></p>
+      <p>Dates de la réservation: <%= reservation.start_date %> <%= reservation.end_date %></p>
+    </div>
+    <% if reservation.status =="pending" %>
+      <%= link_to "Accepter", accept_reservation_path(reservation), method: :patch %>
+      <%= link_to "Refuser", decline_reservation_path(reservation), method: :patch %>
+    <% elsif reservation.status == "accepted" %>
+      <p class="btn btn-success">Réservation acceptée!</p>
+    <% elsif reservation.status == "declined" %>
+      <p class="btn btn-danger">Réservation refusée...</p>
+    <% end %>
+  </div>
+<% end %>

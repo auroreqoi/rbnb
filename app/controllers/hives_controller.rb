@@ -9,5 +9,6 @@ class HivesController < ApplicationController
   end
 
   def index
+    @hives = Hive.all
   end
 end

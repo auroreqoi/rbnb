@@ -23,6 +23,6 @@ class HivesController < ApplicationController
   private
 
   def hive_params
-    params.require(:hive).permit(:name, :description, :address, :price_per_day)
+    params.require(:hive).permit(:name, :description, :address, :price_per_day, :photo)
   end
 end

@@ -1,34 +1,17 @@
-h2{
-text-align: center;
-font-family: 'Times New Roman', Times, serif;
-font-weight: solid;
-text-transform: capitalize;
-
-}
-
-.form-container {
-  width: 300px;
-  height: 400px;
-  margin: auto;
-  margin-bottom: 20px;
-  align-items: center;
-  text-decoration: none;
-  border: 2px solid black;
-  box-shadow:  5px 5px 5px rgba(0,0,0,0.2);
-  background-color: #fff385;
-  background-image: linear-gradient(45deg, #fff385 0%, #FFFB7D 100%);
-
+.form-title {
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: solid;
+  text-transform: capitalize;
 }
 
 .form-inputs {
-
   align-items: center;
   padding: 10px;
   font-weight: solid;
 }
 
 .form-actions {
-
   background-color: #fff385;
   border-radius: 15%;
   margin: auto ;
@@ -40,30 +23,7 @@ text-transform: capitalize;
   text-align: center;
 }
 
-.links {
-  display: flex;
-  width: 300px;
-  height: 100px;
-  align-items: center;
-  margin: auto;
-  font-size: smaller;
-  border: 2px solid black;
-  background-color: #fff385;
-  background-image: linear-gradient(45deg, #fff385 0%, #FFFB7D 100%);
-}
-
-.links a{
-  width: 50%;
-  display: block;
-  text-decoration: none;
-  color: black;
-  padding: 24px;
-  align-items: center;
-  text-align: center;
-
-}
-
-.container {
+.sign-up-form-container {
   width: 500px;
   height: fit-content;
   border: 2px solid black;

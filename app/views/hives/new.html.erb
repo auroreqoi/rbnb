@@ -1,0 +1,35 @@
+<div class="container d-flex justify-content-center">
+  <div class="bg-white my-4 rounded py-4 px-4 w-75">
+    <h2 class="mb-4 text-center">Ajoutez votre superbe ruche !</h2>
+    <%= simple_form_for @hive do |f| %>
+      <%= f.input :name,
+            label: false,
+            placeholder: "Nom" %>
+      <%= f.input :description,
+            label: false,
+            placeholder: "Description" %>
+      <%= f.input :address,
+            label: false,
+            placeholder: "Adresse" %>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">$</span>
+        </div>
+        <%= f.input :price_per_day,
+            label: false,
+            wrapper: false,
+            placeholder: "Prix par jour" %>
+        <%# <input type="text" class="form-control" placeholder="Prix par jour"> %>
+        <div class="input-group-append">
+          <span class="input-group-text">.00</span>
+        </div>
+      </div>
+      <br>
+      <%= f.input :photo, as: :file, label: "Ajoutez une photo" %>
+      <div class="text-center">
+        <%= f.submit "Enregister", class: "btn btn-outline-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

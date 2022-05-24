@@ -1,0 +1,32 @@
+<div class="index-container">
+  <div class="card-product">
+    <% @hives.each do |hive| %>
+      <%= link_to hive_path(hive), class: 'card' do%>
+          <%= cl_image_tag hive.photo.key %>
+          <div class='card-product-infos'>
+            <h2>
+              <i class="fab fa-forumbee"></i>
+              <%= hive.name.capitalize %>
+            </h2>
+            <h3>
+              <i class="fas fa-map-marker-alt"></i>
+              <%= hive.address %>
+            </h3>
+            <p>
+              <i class="fas fa-comment"></i>
+              <%= hive.description %>
+            </p>
+          </div>
+          <div class="card-product-price">
+            <h2><%= hive.price_per_day.to_i %></h2>
+            <p>p / jour</p>
+            <i class="fas fa-heart fa-heart-hive"></i>
+          </div>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="map-container">
+    <img id="map"
+      src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoiYXVyb3JlcW9pIiwiYSI6ImNsMnVobTkwcjAyNmkzZG96ZzEzM244bXkifQ.o8ydSJ-o-KbMNUUZv7VPYw'>
+  </div>
+</div>

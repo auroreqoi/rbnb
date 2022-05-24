@@ -54,5 +54,6 @@ hive_aurore_2.save!
 
 Reservation.create!(user: corentin, hive: hive_shiyun_1, total_price: 9, start_date: Date.today, end_date: Date.today + 3.days)
 Reservation.create!(user: val, hive: hive_shiyun_2, total_price: 36, start_date: Date.today, end_date: Date.today + 6.days)
+Reservation.create!(user: val, hive: hive_shiyun_1, total_price: 9, start_date: Date.today, end_date: Date.today + 3.days)
 Reservation.create!(user: corentin, hive: hive_aurore_1, total_price: 81, start_date: Date.today, end_date: Date.today + 9.days)
 Reservation.create!(user: corentin, hive: hive_aurore_2, total_price: 120, start_date: Date.today, end_date: Date.today + 12.days)

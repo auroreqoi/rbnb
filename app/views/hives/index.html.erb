@@ -2,7 +2,7 @@
   <div class="card-product">
     <% @hives.each do |hive| %>
       <%= link_to hive_path(hive), class: 'card-hives' do%>
-          <%= cl_image_tag hive.photo.key, crop: :fill, width: 400%>
+          <%= cl_image_tag hive.photo.key %>
           <i class="fas fa-heart fa-heart-hive"></i>
           <div class='card-product-infos'>
             <h2>

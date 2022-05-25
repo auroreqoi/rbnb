@@ -25,8 +25,17 @@
   border-radius: 10px;
   text-align: center;
   box-shadow: 5px 5px 11px 0px rgb(211, 211, 211);
-  padding: 16px;
   background-color: white;
+
+  h5 {
+    border-radius: 10px;
+    padding: 16px;
+    background-color: $light-gray;
+  }
+
+  form {
+    padding: 0 16px;
+  }
 }
 
 .reservations-new-button {

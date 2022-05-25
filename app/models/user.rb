@@ -10,4 +10,8 @@ class User < ApplicationRecord
   has_many :reservations # => reservations as an renter
 
   validates :first_name, :last_name, presence: true
+
+  def full_name
+    "#{first_name.capitalize} #{last_name.capitalize}"
+  end
 end

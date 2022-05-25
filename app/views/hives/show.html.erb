@@ -1,5 +1,16 @@
-<h2><%= @hive.name %></h2>
-<p><%= @hive.address %></p>
-<p><%= @hive.description %></p>
-<p><%= @hive.price_per_day %></p>
-<%= cl_image_tag @hive.photo.key, height: 369, width: 396, crop: :fill %>
+<div class="container mt-4">
+  <div class="card">
+    <div class="banner banner-show" style="border-radius: 2px; background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)), url(<%= cl_image_path @hive.photo.key, crop: :fill, width: 1200 %>);">
+      <div class="container">
+      </div>
+    </div>
+    <div class="card-body d-flex">
+      <div class="card-body-infos">
+        <p><%= cl_image_tag @hive.queen.photo.key, crop: :thumb, width: 50, class: "avatar avatar-large" %> <%= @hive.queen.full_name %></p>
+        <h3 class="card-title"><%= @hive.name %></h3>
+        <p class="card-text"><small class="text-muted"><%= icon("fas", "map") %> <%= @hive.address %></small></p>
+        <p class="card-text"><%= @hive.description %></p>
+      </div>
+    </div>
+  </div>
+</div>

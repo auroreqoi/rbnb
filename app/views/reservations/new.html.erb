@@ -1,0 +1,27 @@
+
+
+
+<h1 class ="reservations-new-header"> Welcome to <%= @hive.name %> </h1>
+
+<div class="reservations-new-content">
+
+  <div class="reservations-new-img">
+    <%= cl_image_tag @hive.photo.key %>
+  </div>
+
+  <div class="reservations-new-description">
+    <p><%= @hive.description %></p>
+      <div class="reservations-new-form">
+      <h3> Choissisez vos dates</h3>
+      <p><%= simple_form_for [ @hive, @reservation ] do |f| %>
+        <%= f.input :start_date, label: "Date de début", as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :end_date, label: "Date de fin", as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.submit "Réserver", class:"reservations-new-button" %>
+      <% end %></p>
+      </div>
+  </div>
+
+
+
+
+</div>

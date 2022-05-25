@@ -96,3 +96,12 @@
   top: 0;
   width: -webkit-fill-available;
 }
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}

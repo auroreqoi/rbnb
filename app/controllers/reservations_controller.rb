@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
   def index
-    @reservations = current_user.reservations.all
+    @reservations = current_user.reservations.order("id DESC")
   end
 
   def new
@@ -37,16 +37,11 @@ class ReservationsController < ApplicationController
     @reservation.save
     redirect_to queen_reservations_path
   end
+  
+  private
+
+  def date_params
+    params.require(:reservation).permit(:end_date, :start_date)
+  end
+
 end
-
-
-
-private
-
-def date_params
-  params.require(:reservation).permit(:end_date, :start_date)
-end
-
-
-
-

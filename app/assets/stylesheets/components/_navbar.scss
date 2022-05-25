@@ -8,5 +8,19 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 120px;
+}
+.navbar-brand {
+  padding: 0px;
+}
+
+.navbar-nav {
+  align-items: center;
+  .dropdown {
+    cursor: pointer;
+  }
+}
+
+.align-item-dropdown {
+ padding: 8px;
 }

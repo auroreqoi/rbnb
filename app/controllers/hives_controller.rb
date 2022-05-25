@@ -20,6 +20,13 @@ class HivesController < ApplicationController
 
   def index
     @hives = Hive.order("id DESC").all
+
+    @markers = @hives.geocoded.map do |hive|
+      {
+        lat: hive.latitude,
+        lng: hive.longitude
+      }
+    end
   end
 
   private

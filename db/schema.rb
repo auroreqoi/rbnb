@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_25_091302) do
+ActiveRecord::Schema.define(version: 2022_05_25_133043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2022_05_25_091302) do
 
   create_table "hives", force: :cascade do |t|
     t.bigint "queen_id", null: false
-    t.float "price_per_day"
+    t.integer "price_per_day"
     t.string "name"
     t.text "description"
     t.string "address"

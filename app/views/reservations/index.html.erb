@@ -21,13 +21,13 @@
               <h2><strong>Nombre de jours:</strong></h2>
               <p><%= (reservation.end_date - reservation.start_date).to_i %> jours</p>
               <h2><strong>Prix par jour:</strong></h2>
-              <p><%= (reservation.hive.price_per_day) %>€/jour</p>
+              <p><%= (reservation.hive.price_per_day) %>P/jour</p>
             </div>
           </div>
 
           <div class="card-product-index-reserv-user-infos-price">
-            <p><%= (reservation.hive.price_per_day) %>€x<%= (reservation.end_date - reservation.start_date).to_i %> jours</p>
-            <h3><strong>Total: <%= reservation.total_price %> €</strong></h3>
+            <p><%= (reservation.hive.price_per_day) %>P x <%= (reservation.end_date - reservation.start_date).to_i %> jours</p>
+            <h3><strong>Total: <%= reservation.total_price %> Pollens</strong></h3>
           </div>
 
           <div class="card-product-index-reserv-user-infos-pending">

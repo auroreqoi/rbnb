@@ -1,8 +1,6 @@
 <div class="container mt-4">
   <div class="card">
     <div class="banner banner-show" style="border-radius: 2px; background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)), url(<%= cl_image_path @hive.photo.key, crop: :fill, width: 1200 %>);">
-      <div class="container">
-      </div>
     </div>
     <div class="card-body d-flex">
       <div class="card-body-infos">
@@ -11,6 +9,17 @@
         <p class="card-text"><small class="text-muted"><%= icon("fas", "map") %> <%= @hive.address %></small></p>
         <p class="card-text"><%= @hive.description %></p>
       </div>
+      <div>
+
+      </div>
     </div>
-  </div>
-</div>
+
+    <div class="footer mt-4 mb-1">
+      <div class="footer-links">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>

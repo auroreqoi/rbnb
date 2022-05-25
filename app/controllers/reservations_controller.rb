@@ -37,7 +37,7 @@ class ReservationsController < ApplicationController
     @reservation.save
     redirect_to queen_reservations_path
   end
-  
+
   private
 
   def date_params

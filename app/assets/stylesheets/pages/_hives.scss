@@ -18,7 +18,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card {
+.card-hives {
   background-size: cover;
   background-position: center;
   height: 175px;
@@ -33,61 +33,61 @@
   flex-direction: row;
   margin: 12px 16px;
   text-decoration: none;
+  position: relative;
   &:hover {
     text-decoration: none;
     transform: scale(1.1);
   }
 }
 
-.card img {
+.card-hives img {
   height: 100%;
   width: 160px;
   object-fit: cover;
 }
 
-.card h2 {
-  font-size: 32px;
+.card-hives h2 {
+  font-size: 24px;
   font-weight: bolder;
   color: black;
 }
 
-.card h3 {
-  font-size: 24px;
+.card-hives h3 {
+  font-size: 16px;
   font-weight: bold;
   color: rgb(50, 49, 49);
 }
 
-.card p {
-  font-size: 16px;
+.card-hives p {
+  font-size: 12px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
   color: grey;
 }
 
-.card .card-product-infos {
+.card-hives .card-product-infos {
   padding: 16px;
-  max-width: 300px;
+  max-width: 375px;
   i {
     margin-right: 8px;
   }
 }
 
-.card .card-product-price {
+.card-hives .card-product-price {
   display: flex;
   justify-items: center;
   flex-direction: row;
-  margin-left: 140px;
+  margin-left: 75px;
   align-items: center;
   gap: 8px;
-  position: relative;
 }
 
 .fa-heart-hive {
   color: red;
   position: absolute;
-  bottom: 72px;
-  left: 88px;
+  top: 10px;
+  right: 24px;
 }
 
 #map {

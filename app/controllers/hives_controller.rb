@@ -24,7 +24,9 @@ class HivesController < ApplicationController
     @markers = @hives.geocoded.map do |hive|
       {
         lat: hive.latitude,
-        lng: hive.longitude
+        lng: hive.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { hive: hive }),
+        image_url: helpers.asset_url("beehive_map.png")
       }
     end
   end

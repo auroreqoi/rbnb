@@ -19,7 +19,7 @@ class HivesController < ApplicationController
   end
 
   def index
-    @hives = Hive.all
+    @hives = Hive.order("id DESC").all
   end
 
   private

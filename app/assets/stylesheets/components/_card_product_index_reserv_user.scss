@@ -108,12 +108,74 @@
   padding-top: 20px;
 }
 .card-product-index-reserv-user-infos-pending {
-  position: absolute;
-  left: 50%;
-  bottom: -20px;
-  padding: 12px 20px;
-  border-radius: 8px;
-  background-color: rgb(212, 212, 212);
-  box-shadow: 2px 2px 11px 1px #d2d2d2;
-  transform: translateX(-50%);
+
+
+  .button-accept {
+    position: absolute;
+    left: 30%;
+    bottom: -20px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background-color: rgb(76, 174, 93);
+    box-shadow: 2px 2px 11px 1px #d2d2d2;
+    transform: translateX(-50%);
+    color: white;
+    cursor: pointer;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+
+  .button-refuse {
+    position: absolute;
+    left: 70%;
+    bottom: -20px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    background-color: rgb(194, 84, 84);
+    box-shadow: 2px 2px 11px 1px #d2d2d2;
+    transform: translateX(-50%);
+    color: white;
+    cursor: pointer;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+
+  .button-accepted {
+    position: absolute;
+    left: 50%;
+    bottom: -20px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background-color: rgb(76, 174, 93);
+    box-shadow: 2px 2px 11px 1px #d2d2d2;
+    transform: translateX(-50%);
+    color: white;
+  }
+  .button-refused {
+    position: absolute;
+    left: 50%;
+    bottom: -20px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background-color: rgb(194, 84, 84);
+    box-shadow: 2px 2px 11px 1px #d2d2d2;
+    transform: translateX(-50%);
+    color: white;
+  }
+
+  .button-pending {
+    position: absolute;
+    left: 50%;
+    bottom: -20px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background-color: rgb(179, 179, 179);
+    box-shadow: 2px 2px 11px 1px #d2d2d2;
+    transform: translateX(-50%);
+    color: white;
+  }
 }

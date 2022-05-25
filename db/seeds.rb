@@ -50,7 +50,7 @@ hive_shiyun_2.save!
 hive_aurore_1 = Hive.create!(queen: aurore, name: "La ruche maritime", description: "L'odeur du pollen vous irrite,
                              venez prendre une bonne bouffée d'air iodé, la reine y est pirate et vous racontera
                              ses aventures les plus épiques lors de sa dernière transat.",
-                             address: "Rue Albert de Mun, 29680 Roscoff", price_per_day: 19)
+                             address: "Rue Albert de Mun, 29680 Roscoff", price_per_day: 10)
 file_hive_aurore_1 = File.open("db/fixtures/rouge.jpeg")
 hive_aurore_1.photo.attach(io: file_hive_aurore_1, filename: 'rouge.jpeg', content_type: 'image/jpeg')
 hive_aurore_1.save!
@@ -58,13 +58,13 @@ hive_aurore_1.save!
 hive_aurore_2 = Hive.create!(queen: aurore, name: "La ruche enchantée", description: "Cette ruche n'est pas féerique,non
                              ... Mais bien enchantée oui ! Ici, la reine vous fera oblier votre quotidien en vous
                              transportant dans des aventures où vous serez les actrices principales! Bzzz!",
-                             address: "8 Rue du Pont, 56800 Loyat", price_per_day: 25)
+                             address: "8 Rue du Pont, 56800 Loyat", price_per_day: 5)
 file_hive_aurore_2 = File.open("db/fixtures/bleu.jpeg")
 hive_aurore_2.photo.attach(io: file_hive_aurore_2, filename: 'bleu.jpeg', content_type: 'image/jpeg')
 hive_aurore_2.save!
 
-Reservation.create!(user: corentin, hive: hive_shiyun_1, start_date: Date.today, end_date: Date.today + 3.days)
-Reservation.create!(user: val, hive: hive_shiyun_2, start_date: Date.today, end_date: Date.today + 6.days)
-Reservation.create!(user: val, hive: hive_shiyun_1, start_date: Date.today, end_date: Date.today + 3.days)
-Reservation.create!(user: corentin, hive: hive_aurore_1, start_date: Date.today, end_date: Date.today + 9.days)
-Reservation.create!(user: corentin, hive: hive_aurore_2, start_date: Date.today, end_date: Date.today + 12.days)
+Reservation.create!(user: corentin, hive: hive_shiyun_1, total_price: 27, start_date: Date.today, end_date: Date.today + 3.days)
+Reservation.create!(user: val, hive: hive_shiyun_2, total_price: 90, start_date: Date.today, end_date: Date.today + 6.days)
+Reservation.create!(user: val, hive: hive_shiyun_1, total_price: 27, start_date: Date.today, end_date: Date.today + 3.days)
+Reservation.create!(user: corentin, hive: hive_aurore_1, total_price: 90, start_date: Date.today, end_date: Date.today + 9.days)
+Reservation.create!(user: corentin, hive: hive_aurore_2, total_price: 60, start_date: Date.today, end_date: Date.today + 12.days)

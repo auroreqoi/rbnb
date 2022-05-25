@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
   def index
-    @reservations = current_user.reservations.all
+    @reservations = current_user.reservations.order("id DESC")
   end
 
   def new
@@ -23,4 +23,3 @@ class ReservationsController < ApplicationController
     redirect_to queen_reservations_path
   end
 end
-

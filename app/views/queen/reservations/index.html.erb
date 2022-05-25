@@ -3,24 +3,58 @@
 
 <%# pour chaque réservation, je veux afficher le nom de l'user qui a fait la réservation, les dates %>
 
-<h1> All reservations on my hives</h1>
+<div class="container">
 
-<% @reservations.each do |reservation| %>
-  <div class="cards-queen">
-    <%= cl_image_tag reservation.hive.photo.key, height: 300, width: 400, crop: :fill %>
-    <div class = "cards-queen-infos">
-      <p>Locataire: <%= reservation.user.first_name %></p>
-      <p>Ruche réservée: <%= reservation.hive.name %></p>
-      <p>Prix Total: <%= reservation.total_price %></p>
-      <p>Dates de la réservation: <%= reservation.start_date %> <%= reservation.end_date %></p>
-    </div>
-    <% if reservation.status =="pending" %>
-      <%= link_to "Accepter", accept_reservation_path(reservation), method: :patch %>
-      <%= link_to "Refuser", decline_reservation_path(reservation), method: :patch %>
-    <% elsif reservation.status == "accepted" %>
-      <p class="btn btn-success">Réservation acceptée!</p>
-    <% elsif reservation.status == "declined" %>
-      <p class="btn btn-danger">Réservation refusée...</p>
+  <h1 class="text-center mt-4">Liste de mes validations</h1>
+
+  <div class="cards-index-reserv-user">
+
+    <% @reservations.each do |reservation| %>
+      <div class="card-product-index-reserv-user d-flex p-2 mb-5">
+        <%= cl_image_tag reservation.hive.photo.key, crop: :fill %>
+
+        <div class="card-product-index-reserv-user-infos">
+
+          <div class="card-product-index-reserv-user-infos-date">
+            <div class="card-product-index-reserv-user-infos-date-left">
+              <h2><strong>Date de réservations:</strong></h2>
+              <p>Du <%= reservation.start_date.strftime("%d %B %Y") %> </p>
+              <p>Au <%= reservation.end_date.strftime("%d %B %Y") %></p>
+            </div>
+
+            <div class="card-product-index-reserv-user-infos-date-right">
+              <h2><strong>Locataire:</strong></h2>
+              <p><%= reservation.user.first_name %></p>
+              <h2><strong>Ruche réservée:</strong></h2>
+              <p><%= reservation.hive.name %></p>
+            </div>
+          </div>
+
+          <div class="card-product-index-reserv-user-infos-price">
+            <p><%= (reservation.hive.price_per_day) %>P x <%= (reservation.end_date - reservation.start_date).to_i %> jours</p>
+            <h3><strong>Total: <%= reservation.total_price %> Pollens</strong></h3>
+          </div>
+
+          <div class="card-product-index-reserv-user-infos-pending">
+            <% if reservation.status =="pending" %>
+              <div class="button-accept">
+                <%= link_to "Accepter", accept_reservation_path(reservation), method: :patch %>
+              </div>
+              <div class="button-refuse">
+                <%= link_to "Refuser", decline_reservation_path(reservation), method: :patch %>
+              </div>
+            <% elsif reservation.status == "accepted" %>
+              <p class="button-accepted">Réservation acceptée!</p>
+            <% elsif reservation.status == "declined" %>
+              <p class="button-refused">Réservation refusée...</p>
+            <% end %>
+          </div>
+
+        </div>
+
+      </div>
     <% end %>
+
   </div>
-<% end %>
+
+</div>

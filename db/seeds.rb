@@ -130,9 +130,7 @@ Reservation.create!(user: val, hive: hive_shiyun_1, total_price: 27, start_date:
 Reservation.create!(user: corentin, hive: hive_aurore_1, total_price: 90, start_date: Date.today, end_date: Date.today + 9.days)
 Reservation.create!(user: corentin, hive: hive_aurore_2, total_price: 60, start_date: Date.today, end_date: Date.today + 12.days)
 
-Reservation.create!(user: hugo, hive: hive_jj_1, total_price: 66, start_date: Date.new(2019, 12, 25), end_date: Date.new(2020, 01, 01), status: "accepted")
-Reservation.create!(user: jj, hive: hive_miel_pops_1, total_price: 69, start_date: Date.new(2022, 07, 01), end_date: Date.new(2020, 07, 11), status: "pending")
-Reservation.create!(user: maya, hive: hive_hugo_1, total_price: 51, start_date: Date.new(2020, 08, 01), end_date: Date.new(2020, 08, 07), status: "declined")
-Reservation.create!(user: miel_pops, hive: hive_hugo_1, total_price: 59.5, start_date: Date.new(2020, 08, 01), end_date: Date.new(2020, 08, 08), status: "accepted")
-
-Date.new(2019, 12, 25)
+Reservation.create!(user: hugo, hive: hive_jj_1, total_price: 66, start_date: Date.new(2019, 12, 25), end_date: Date.new(2020, 1, 1), status: "accepted")
+Reservation.create!(user: jj, hive: hive_miel_pops_1, total_price: 69, start_date: Date.new(2022, 7, 1), end_date: Date.new(2020, 7, 11), status: "pending")
+Reservation.create!(user: maya, hive: hive_hugo_1, total_price: 51, start_date: Date.new(2020, 8, 1), end_date: Date.new(2020, 8, 7), status: "declined")
+Reservation.create!(user: miel_pops, hive: hive_hugo_1, total_price: 59.5, start_date: Date.new(2020, 8, 1), end_date: Date.new(2020, 8, 8), status: "accepted")

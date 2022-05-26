@@ -1,0 +1,53 @@
+.card-show-average {
+  padding-top: 24px;
+  border-top: solid 1px lightgrey;
+  margin-top: 16px;
+  padding-left: 16px;
+  padding-bottom: 8px;
+}
+
+.card-show-reviews {
+  // position: relative;
+  background: white;
+  margin: 16px;
+  padding: 16px;
+  border: 1px solid $light-gray;
+}
+
+.card-show-reviews img{
+  // position: absolute;
+  // top: 10px;
+  // left: 10px;
+  margin-right: 8px;
+}
+
+.card-show-reviews-h5 {
+  // position: absolute;
+  // top: 10px;
+  // left: 60px;
+  text-transform: capitalize;
+  text-transform: bold;
+  margin: 0;
+}
+
+.card-show-reviews-content {
+  // position: relative;
+  // top: 40px;
+  // left: 10px;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.card-add-reviews {
+  background: white;
+  text-decoration: none;
+  padding: 16px;
+  font-size: 16px;
+}
+
+.card-add-reviews-button {
+  border: 2px solid black;
+  border-radius: 12px;
+  background-color: #fff385;
+  align-items: center;
+}

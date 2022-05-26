@@ -56,21 +56,21 @@ file_hive_aurore_2 = File.open("db/fixtures/bleu.jpeg")
 hive_aurore_2.photo.attach(io: file_hive_aurore_2, filename: 'bleu.jpeg', content_type: 'image/jpeg')
 hive_aurore_2.save!
 
-hive_aurore_3 = Hive.create!(queen: aurore, name: "La ruche wagonaise", description: "Une odeur de souffre
+hive_shiyun_3 = Hive.create!(queen: aurore, name: "La ruche wagonaise", description: "Une odeur de souffre
                             ... mais aussi une odeur charmante qui rapelle les premiers jours du printemps
                             et ses odeurs agréables. Bzz Bzzzt!",
                             address: "10 Pass. de la Poule Noire, 44000 Nantes", price_per_day: 4)
 file_hive_aurore_3 = File.open("db/fixtures/ruche_wagon.jpeg")
-hive_aurore_3.photo.attach(io: file_hive_aurore_3, filename: 'ruche_wagon.jpeg', content_type: 'image/jpeg')
-hive_aurore_3.save!
+hive_shiyun_3.photo.attach(io: file_hive_shiyun_3, filename: 'ruche_wagon.jpeg', content_type: 'image/jpeg')
+hive_shiyun_3.save!
 
-hive_aurore_4 = Hive.create!(queen: aurore, name: "La ruche sportive", description: "Le calme reigne près de
+hive_aurore_3 = Hive.create!(queen: aurore, name: "La ruche sportive", description: "Le calme reigne près de
                             ce gymnase en pleine ville. Proche d'un parc ou de nombreux arbres et fleurs sont en émoi, endroit parfait
                             Pour des vacances sportives, nature et tranquilité ! Bzz Bz Bzzzzz!",
                             address: "13 Bd Clovis Constant, 44000 Nantes", price_per_day: 3)
-file_hive_aurore_4 = File.open("db/fixtures/ruche_sport.jpeg")
-hive_aurore_4.photo.attach(io: file_hive_aurore_4, filename: 'ruche_sport.jpeg', content_type: 'image/jpeg')
-hive_aurore_4.save!
+file_hive_aurore_3 = File.open("db/fixtures/ruche_sport.jpeg")
+hive_aurore_3.photo.attach(io: file_hive_aurore_3, filename: 'ruche_sport.jpeg', content_type: 'image/jpeg')
+hive_aurore_3.save!
 
 Reservation.create!(user: corentin, hive: hive_shiyun_1, total_price: 27, start_date: Date.today, end_date: Date.today + 3.days)
 Reservation.create!(user: val, hive: hive_shiyun_2, total_price: 90, start_date: Date.today, end_date: Date.today + 6.days)

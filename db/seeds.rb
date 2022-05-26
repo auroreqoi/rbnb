@@ -10,8 +10,8 @@ corentin.photo.attach(io: file_corentin, filename: 'bee3.png', content_type: 'im
 corentin.save!
 
 hugo = User.new(first_name: "Hugo", last_name: "D.", email: "hugo@test.com", password: "password")
-file_hugo = File.open("db/fixtures/hugo.png")
-hugo.photo.attach(io: file_hugo, filename: 'hugo.png', content_type: 'image/png')
+file_hugo = File.open("db/fixtures/hugo.jpg")
+hugo.photo.attach(io: file_hugo, filename: 'hugo.jpg', content_type: 'image/jpg')
 hugo.save!
 
 jj = User.new(first_name: "JJ", last_name: "B.", email: "jj@test.com", password: "password")
@@ -19,12 +19,12 @@ file_jj = File.open("db/fixtures/jj.png")
 jj.photo.attach(io: file_jj, filename: 'jj.png', content_type: 'image/png')
 jj.save!
 
-maya = User.new(first_name: "maya", last_name: "B.", email: "maya@test.com", password: "password")
+maya = User.new(first_name: "Maya", last_name: "Q.", email: "maya@test.com", password: "password")
 file_maya = File.open("db/fixtures/maya.png")
 maya.photo.attach(io: file_maya, filename: 'maya.png', content_type: 'image/png')
 maya.save!
 
-miel_pops = User.new(first_name: "miel_pops", last_name: "B.", email: "mielpops@test.com", password: "password")
+miel_pops = User.new(first_name: "Miel Pops", last_name: "B.", email: "mielpops@test.com", password: "password")
 file_miel_pops = File.open("db/fixtures/miel_pops.jpg")
 miel_pops.photo.attach(io: file_miel_pops, filename: 'miel_pops.jpg', content_type: 'image/png')
 miel_pops.save!
@@ -107,7 +107,7 @@ hive_miel_pops_1.save!
 
 hive_jj_1 = Hive.create!(queen: jj, name: "La ruche posey", description: "Venez vous détendre dans une ruche au milieu des champs de chanvres,
   afin de vous reposez le cerveau et les ailes, tout en écoutant de la reggae",
-  address: "7PWC+XFJ, Nine Mile, Jamaïque", price_per_day: 11)
+  address: "56 Hope Rd, Kingston, Saint Andrew, Jamaïque", price_per_day: 11)
 file_hive_jj_1 = File.open("db/fixtures/abeille_cannabis.jpg")
 hive_jj_1.photo.attach(io: file_hive_jj_1, filename: 'abeille_cannabis.jpg', content_type: 'image/jpeg')
 hive_jj_1.save!
@@ -118,11 +118,11 @@ file_hive_hugo_1 = File.open("db/fixtures/flow_hive.jpg")
 hive_hugo_1.photo.attach(io: file_hive_hugo_1, filename: 'flow_hive.jpg', content_type: 'image/jpeg')
 hive_hugo_1.save!
 
-hive_maya_3 = Hive.create!(queen: maya, name: "La ruche enfantine", description: "Retrouvez une partie de votre enfance dans cette ruche 100% plastique",
-  address: "Boulevard de Parc, 77700 Coupvray", price_per_day: 2)
-file_hive_maya_3 = File.open("db/fixtures/maya_ruche.jpg")
-hive_maya_3.photo.attach(io: file_hive_maya_3, filename: 'maya_ruche.jpg', content_type: 'image/jpeg')
-hive_maya_3.save!
+hive_maya_1 = Hive.create!(queen: maya, name: "La ruche enfantine", description: "Retrouvez une partie de votre enfance dans cette ruche 100% plastique",
+  address: "Rue de la Marnière, Chessy, Seine-et-Marne 77700, France", price_per_day: 2)
+file_hive_maya_1 = File.open("db/fixtures/maya_ruche.jpg")
+hive_maya_1.photo.attach(io: file_hive_maya_1, filename: 'maya_ruche.jpg', content_type: 'image/jpeg')
+hive_maya_1.save!
 
 Reservation.create!(user: corentin, hive: hive_shiyun_1, total_price: 27, start_date: Date.today, end_date: Date.today + 3.days)
 Reservation.create!(user: val, hive: hive_shiyun_2, total_price: 90, start_date: Date.today, end_date: Date.today + 6.days)

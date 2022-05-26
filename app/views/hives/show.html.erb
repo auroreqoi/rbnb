@@ -27,6 +27,41 @@
       </div>
     </div>
 
+    <h3 class="card-show-average"><%= @hive.reviews.average(:rating)&.round(1) %> <i class="fas fa-star"></i>  - <%= @hive.reviews.count %> Commentaires</h3>
+
+    <div class="card-add-reviews">
+      <%= simple_form_for [@hive, @review] do |f|  %>
+          <%= f.input :content, label: "Commentaires", required: false %>
+          <%= f.input :rating, label: " Note", required: false %>
+          <%= f.submit "Envoyer", class: "card-add-reviews-button"  %>
+        <% end %>
+    </div>
+
+    <% @hive.reviews.each_slice(2) do |slice| %>
+      <div class="d-flex">
+        <% slice.each do |review| %>
+          <div class="card-show-reviews flex-fill">
+            <div class="d-flex align-items-center mb-1">
+              <%= cl_image_tag review.user.photo.key, crop: :fill, class: "avatar" %>
+              <h5 class="card-show-reviews-h5"><%= review.user.first_name %></h5>
+            </div>
+            <div class="card-show-reviews-content">
+              <small><%= review.created_at.to_date.to_formatted_s(:long_ordinal) %> </small>
+              <p class="mt-3">
+                <% review.rating.times do %>
+                  <i class="fas fa-star"></i>
+                <% end %>
+                <% (5 - review.rating).times do %>
+                  <i class="far fa-star"></i>
+                <% end %>
+              </p>
+              <p class="mt-3"><%= review.content %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+
     <div class="footer mt-4 mb-1">
       <div class="footer-links">
         <a href="#"><i class="fab fa-github"></i></a>
@@ -36,3 +71,6 @@
         <a href="#"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
+  </div>
+</div>
+

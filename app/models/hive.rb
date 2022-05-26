@@ -4,7 +4,7 @@ class Hive < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_one_attached :photo
 
-  validates :name, :description, :address, :price_per_day, presence: true
+  validates :name, :description, length: { maximum: 1000 }, :address, :price_per_day, presence: true
   validates :name, uniqueness: true
 
   geocoded_by :address

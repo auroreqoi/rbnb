@@ -56,11 +56,11 @@ file_hive_aurore_2 = File.open("db/fixtures/bleu.jpeg")
 hive_aurore_2.photo.attach(io: file_hive_aurore_2, filename: 'bleu.jpeg', content_type: 'image/jpeg')
 hive_aurore_2.save!
 
-hive_shiyun_3 = Hive.create!(queen: aurore, name: "La ruche wagonaise", description: "Une odeur de souffre
+hive_shiyun_3 = Hive.create!(queen: shiyun, name: "La ruche wagonaise", description: "Une odeur de souffre
                             ... mais aussi une odeur charmante qui rapelle les premiers jours du printemps
                             et ses odeurs agréables. Bzz Bzzzt!",
                             address: "10 Pass. de la Poule Noire, 44000 Nantes", price_per_day: 4)
-file_hive_aurore_3 = File.open("db/fixtures/ruche_wagon.jpeg")
+file_hive_shiyun_3 = File.open("db/fixtures/ruche_wagon.jpeg")
 hive_shiyun_3.photo.attach(io: file_hive_shiyun_3, filename: 'ruche_wagon.jpeg', content_type: 'image/jpeg')
 hive_shiyun_3.save!
 

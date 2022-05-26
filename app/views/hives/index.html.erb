@@ -1,12 +1,12 @@
 <div class="index-container">
-  <div class="card-product">
+  <div class="">
     <% @hives.each do |hive| %>
-      <%= link_to hive_path(hive), class: 'card-hives' do%>
+      <div class="relative">
+      <i class="fas fa-seedling fa-heart-hive" id="seed" data-controller="like" data-action="click->like#like"></i>
+      <%= link_to hive_path(hive), class: 'card-product card-hives', "data-controller": "mapbox", data: { action: 'mouseenter->mapbox#hovering mouseleave->mapbox#leaving', id: hive.id } do%>
           <%= cl_image_tag hive.photo.key, crop: :fill, width: 400 %>
-          <i class="fas fa-heart fa-heart-hive"></i>
           <div class='card-product-infos'>
             <h2>
-              <i class="fab fa-forumbee"></i>
               <%= hive.name.capitalize %>
             </h2>
             <h3>
@@ -23,6 +23,7 @@
             <p>p / jour</p>
           </div>
       <% end %>
+      </div>
     <% end %>
   </div>
   <div id='map'
@@ -30,3 +31,5 @@
     data-mapbox-markers-value="<%= @markers.to_json %>"
     data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
+
+

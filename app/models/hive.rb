@@ -6,6 +6,7 @@ class Hive < ApplicationRecord
 
   validates :name, :description, :address, :price_per_day, presence: true
   validates :name, uniqueness: true
+  validates :description, length: { maximum: 1000 }
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?

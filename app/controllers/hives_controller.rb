@@ -24,7 +24,17 @@ class HivesController < ApplicationController
   end
 
   def index
-    @hives = Hive.order("id DESC").all
+    case params[:order]
+    when "desc_price"
+      @hives = Hive.order(price_per_day: :desc)
+    when "asc_price"
+      @hives = Hive.order(price_per_day: :asc)
+    else
+      @hives = Hive.order(id: :desc)
+    end
+
+    @hives = @hives.where(category: params[:category]) if params[:category].present?
+    @hives = @hives.search_by_name_and_description_and_address(params[:query]) if params[:query].present?
 
     @markers = @hives.geocoded.map do |hive|
       {
@@ -40,6 +50,6 @@ class HivesController < ApplicationController
   private
 
   def hive_params
-    params.require(:hive).permit(:name, :description, :address, :price_per_day, :photo)
+    params.require(:hive).permit(:name, :description, :address, :price_per_day, :photo, :category)
   end
 end

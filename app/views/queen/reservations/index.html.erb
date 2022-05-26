@@ -31,12 +31,12 @@
             <h3><strong>Total: <%= reservation.total_price %> Pollens</strong></h3>
           </div>
 
-          <div class="card-product-index-reserv-user-infos-pending">
+          <div class="card-product-index-reserv-user-infos-pending" >
             <% if reservation.status =="pending" %>
-              <div class="button-accept">
+              <div class="button-accept" >
                 <%= link_to "Accepter", accept_reservation_path(reservation), method: :patch %>
               </div>
-              <div class="button-refuse">
+              <div class="button-refuse" >
                 <%= link_to "Refuser", decline_reservation_path(reservation), method: :patch %>
               </div>
             <% elsif reservation.status == "accepted" %>

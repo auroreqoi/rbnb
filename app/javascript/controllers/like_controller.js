@@ -5,7 +5,6 @@ export default class extends Controller {
   }
   like(event) {
     event.preventDefault()
-    console.log('hellooooo')
     const seed = event.currentTarget
     // const seed = document.getElementById(seedId)
     seed.style.color = "#FFD470"

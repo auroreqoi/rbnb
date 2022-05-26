@@ -9,6 +9,26 @@ file_corentin = File.open("db/fixtures/bee3.png")
 corentin.photo.attach(io: file_corentin, filename: 'bee3.png', content_type: 'image/png')
 corentin.save!
 
+hugo = User.new(first_name: "Hugo", last_name: "D.", email: "hugo@test.com", password: "password")
+file_hugo = File.open("db/fixtures/hugo.png")
+hugo.photo.attach(io: file_hugo, filename: 'hugo.png', content_type: 'image/png')
+hugo.save!
+
+jj = User.new(first_name: "JJ", last_name: "B.", email: "jj@test.com", password: "password")
+file_jj = File.open("db/fixtures/jj.png")
+jj.photo.attach(io: file_jj, filename: 'jj.png', content_type: 'image/png')
+jj.save!
+
+maya = User.new(first_name: "maya", last_name: "B.", email: "maya@test.com", password: "password")
+file_maya = File.open("db/fixtures/maya.png")
+maya.photo.attach(io: file_maya, filename: 'maya.png', content_type: 'image/png')
+maya.save!
+
+miel_pops = User.new(first_name: "miel_pops", last_name: "B.", email: "mielpops@test.com", password: "password")
+file_miel_pops = File.open("db/fixtures/miel_pops.jpg")
+miel_pops.photo.attach(io: file_miel_pops, filename: 'miel_pops.jpg', content_type: 'image/png')
+miel_pops.save!
+
 shiyun = User.create!(first_name: "Shiyun", last_name: "S.", email: "shiyun@test.com", password: "password")
 file_shiyun = File.open("db/fixtures/bee4.png")
 shiyun.photo.attach(io: file_shiyun, filename: 'bee4.png', content_type: 'image/png')
@@ -72,8 +92,47 @@ file_hive_aurore_4 = File.open("db/fixtures/ruche_sport.jpeg")
 hive_aurore_4.photo.attach(io: file_hive_aurore_4, filename: 'ruche_sport.jpeg', content_type: 'image/jpeg')
 hive_aurore_4.save!
 
+hive_corentin_1 = Hive.create!(queen: corentin, name: "La ruche du stade", description: "Une ruche proche de vous et de vos joueurs, toujours ensemble, toujours en avant",
+  address: "Rue du manoir, 22200 Guingamp", price_per_day: 7)
+file_hive_corentin_1 = File.open("db/fixtures/roudourou.jpg")
+hive_corentin_1.photo.attach(io: file_hive_corentin_1, filename: 'roudourou.jpg', content_type: 'image/jpeg')
+hive_corentin_1.save!
+
+hive_miel_pops_1 = Hive.create!(queen: miel_pops, name: "La ruche de votre petit déjeuner", description: "Le soleil nous réveille, il fait beau, il fait chaud, c'est le moment pour
+  .... MIEL POPS, MIAM MIAM, TROP BON CRUNCH CRUNCH CRUNCH !!!",
+  address: "2 La Marre, 35440 Montreuil-sur-Ille", price_per_day: 6.9)
+file_hive_miel_pops_1 = File.open("db/fixtures/ruche_miel_pops.jpg")
+hive_miel_pops_1.photo.attach(io: file_hive_miel_pops_1, filename: 'ruche_miel_pops.jpg', content_type: 'image/jpeg')
+hive_miel_pops_1.save!
+
+hive_jj_1 = Hive.create!(queen: jj, name: "La ruche posey", description: "Venez vous détendre dans une ruche au milieu des champs de chanvres,
+  afin de vous reposez le cerveau et les ailes, tout en écoutant de la reggae",
+  address: "7PWC+XFJ, Nine Mile, Jamaïque", price_per_day: 11)
+file_hive_jj_1 = File.open("db/fixtures/abeille_cannabis.jpg")
+hive_jj_1.photo.attach(io: file_hive_jj_1, filename: 'abeille_cannabis.jpg', content_type: 'image/jpeg')
+hive_jj_1.save!
+
+hive_hugo_1 = Hive.create!(queen: hugo, name: "La ruche nouvelle génération", description: "Venez produire votre petite dose de miel, sans risquer de vous faire enfumer",
+  address: "2 Place Camille Jullian, 33000 Bordeaux", price_per_day: 8.5)
+file_hive_hugo_1 = File.open("db/fixtures/flow_hive.jpg")
+hive_hugo_1.photo.attach(io: file_hive_hugo_1, filename: 'flow_hive.jpg', content_type: 'image/jpeg')
+hive_hugo_1.save!
+
+hive_maya_3 = Hive.create!(queen: maya, name: "La ruche enfantine", description: "Retrouvez une partie de votre enfance dans cette ruche 100% plastique",
+  address: "Boulevard de Parc, 77700 Coupvray", price_per_day: 2)
+file_hive_maya_3 = File.open("db/fixtures/maya_ruche.jpg")
+hive_maya_3.photo.attach(io: file_hive_maya_3, filename: 'maya_ruche.jpg', content_type: 'image/jpeg')
+hive_maya_3.save!
+
 Reservation.create!(user: corentin, hive: hive_shiyun_1, total_price: 27, start_date: Date.today, end_date: Date.today + 3.days)
 Reservation.create!(user: val, hive: hive_shiyun_2, total_price: 90, start_date: Date.today, end_date: Date.today + 6.days)
 Reservation.create!(user: val, hive: hive_shiyun_1, total_price: 27, start_date: Date.today, end_date: Date.today + 3.days)
 Reservation.create!(user: corentin, hive: hive_aurore_1, total_price: 90, start_date: Date.today, end_date: Date.today + 9.days)
 Reservation.create!(user: corentin, hive: hive_aurore_2, total_price: 60, start_date: Date.today, end_date: Date.today + 12.days)
+
+Reservation.create!(user: hugo, hive: hive_jj_1, total_price: 66, start_date: Date.new(2019, 12, 25), end_date: Date.new(2020, 01, 01), status: "accepted")
+Reservation.create!(user: jj, hive: hive_miel_pops_1, total_price: 69, start_date: Date.new(2022, 07, 01), end_date: Date.new(2020, 07, 11), status: "pending")
+Reservation.create!(user: maya, hive: hive_hugo_1, total_price: 51, start_date: Date.new(2020, 08, 01), end_date: Date.new(2020, 08, 07), status: "declined")
+Reservation.create!(user: miel_pops, hive: hive_hugo_1, total_price: 59.5, start_date: Date.new(2020, 08, 01), end_date: Date.new(2020, 08, 08), status: "accepted")
+
+Date.new(2019, 12, 25)

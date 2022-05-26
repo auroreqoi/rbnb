@@ -18,6 +18,9 @@ class HivesController < ApplicationController
   def show
     @hive = Hive.find(params[:id])
     @reservation = Reservation.new
+
+    @review = Review.new
+    
   end
 
   def index

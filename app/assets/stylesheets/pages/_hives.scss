@@ -4,9 +4,13 @@
   grid-gap: 16px;
 }
 
+.relative {
+  position: relative;
+}
+
 .card-product {
   overflow: hidden;
-  background: white;
+  background: $light-orange;
   margin-top: 24px;
   margin-right: 12px;
   margin-left: 24px;
@@ -36,7 +40,8 @@
   position: relative;
   &:hover {
     text-decoration: none;
-    transform: scale(1.1);
+    transform: scale(1.02);
+    pointer-events: pointer;
   }
 }
 
@@ -64,6 +69,8 @@
   opacity: .7;
   margin-bottom: 0;
   color: grey;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .card-hives .card-product-infos {
@@ -78,16 +85,17 @@
   display: flex;
   justify-items: center;
   flex-direction: row;
-  margin-left: 75px;
+  margin-left: 140px;
   align-items: center;
   gap: 8px;
 }
 
 .fa-heart-hive {
-  color: red;
+  color: $gray;
   position: absolute;
   top: 10px;
-  right: 24px;
+  right: 40px;
+  z-index: 50;
 }
 
 #map {

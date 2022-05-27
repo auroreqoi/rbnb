@@ -7,20 +7,28 @@
   </div>
 </div>
 
-<div class="cards-home">
-  <div class="card-category-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path 'ruche_aménagé.jpg'%>)">
-    Ruche Aménagé
-  </div>
+<div class="cards-home" >
+  <%= link_to hives_path(category: "Ruche Aménagée"), class: "card-home-link" do %>
+    <div class="card-category-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path 'ruche_aménagé.jpg'%>)">
+      Ruche Aménagée
+    </div>
+  <% end %>
 
-  <div class="card-category-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path 'nature.jpg'%>)">
-    Retour à la Nature
-  </div>
+  <%= link_to hives_path(category: "Retour à la Nature"), class: "card-home-link" do %>
+    <div class="card-category-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path 'nature.jpg'%>)">
+      Retour à la Nature
+    </div>
+  <% end %>
 
-  <div class="card-category-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path 'famille_nombreuse.jpg'%>)">
-    Famille Nombreuse
-  </div>
+  <%= link_to hives_path(category: "Famille Nombreuse"), class: "card-home-link" do %>
+    <div class="card-category-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path 'famille_nombreuse.jpg'%>)">
+      Famille Nombreuse
+    </div>
+  <% end %>
 
-  <div class="card-category-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path 'love_hive.jpg'%>)">
-    Abeilles amoureuses
-  </div>
+  <%= link_to hives_path(category: "Abeilles Amoureuses"), class: "card-home-link" do %>
+    <div class="card-category-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path 'love_hive.jpg'%>)">
+      Abeilles Amoureuses
+    </div>
+  <% end %>
 </div>

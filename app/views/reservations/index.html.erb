@@ -1,51 +1,50 @@
-<div class="container">
+<div class="container col-9">
 
   <h1 class="text-center mt-4">Liste de mes réservations</h1>
 
-  <div class="cards-index-reserv-user">
+  <% @reservations.each do |reservation| %>
+    <div class="card-product-index-reserv-user py-2 px-4 m-5">
+      <%= cl_image_tag reservation.hive.photo.key, crop: :fill %>
 
-    <% @reservations.each do |reservation| %>
-      <div class="card-product-index-reserv-user d-flex p-2 mb-5">
-        <%= cl_image_tag reservation.hive.photo.key, crop: :fill %>
+      <div class="card-product-index-reserv-user-infos">
 
-        <div class="card-product-index-reserv-user-infos">
-
-          <div class="card-product-index-reserv-user-infos-date">
-            <div class="card-product-index-reserv-user-infos-date-left">
-              <h2><strong>Date de réservations</strong></h2>
-              <p>Du <%= reservation.start_date.strftime("%d %B %Y") %> </p>
-              <p>Au <%= reservation.end_date.strftime("%d %B %Y") %></p>
-            </div>
-
-            <div class="card-product-index-reserv-user-infos-date-right">
-              <h2><strong>Nombre de jours:</strong></h2>
-              <p><%= (reservation.end_date - reservation.start_date).to_i %> jours</p>
-              <h2><strong>Prix par jour:</strong></h2>
-              <p><%= (reservation.hive.price_per_day) %>P/jour</p>
-            </div>
+        <div class="card-product-index-reserv-user-infos-date">
+          <div class="card-product-index-reserv-user-infos-date-left">
+            <h2><strong>Date de réservations</strong></h2>
+            <p>Du <%= reservation.start_date.strftime("%d %B %Y") %> </p>
+            <p>Au <%= reservation.end_date.strftime("%d %B %Y") %></p>
           </div>
 
-          <div class="card-product-index-reserv-user-infos-price">
-            <p><%= (reservation.hive.price_per_day) %>P x <%= (reservation.end_date - reservation.start_date).to_i %> jours</p>
-            <h3><strong>Total: <%= reservation.total_price %> Pollens</strong></h3>
+          <div class="card-product-index-reserv-user-infos-date-right">
+            <h2><strong>Nombre de jours</strong></h2>
+            <p><%= (reservation.end_date - reservation.start_date).to_i %> jours</p>
+            <h2><strong>Prix par jour</strong></h2>
+            <p><%= (reservation.hive.price_per_day) %>P/jour</p>
           </div>
-
-          <div class="card-product-index-reserv-user-infos-pending">
-            <% if reservation.status =="pending" %>
-              <p class="button-pending">En attente de validation</p>
-            <% elsif reservation.status == "accepted" %>
-              <p class="button-accepted">Réservation acceptée!</p>
-            <% elsif reservation.status == "declined" %>
-              <p class="button-refused">Réservation refusée...</p>
-            <% end %>
-          </div>
-
         </div>
 
+        <div class="card-product-index-reserv-user-infos-price">
+          <p><%= (reservation.hive.price_per_day) %>P x <%= (reservation.end_date - reservation.start_date).to_i %> jours</p>
+          <h4>Total</h4>
+          <h3><strong><%= reservation.total_price %> Pollens</strong></h3>
+        </div>
+
+        <div class="card-product-index-reserv-user-infos-pending">
+          <% if reservation.status =="pending" %>
+            <p class="button-pending">En attente de validation</p>
+          <% elsif reservation.status == "accepted" %>
+            <p class="button-accepted">Réservation acceptée!</p>
+          <% elsif reservation.status == "declined" %>
+            <p class="button-refused">Réservation refusée...</p>
+          <% end %>
+        </div>
 
       </div>
-    <% end %>
 
-  </div>
+
+    </div>
+  <% end %>
+
+
 
 </div>

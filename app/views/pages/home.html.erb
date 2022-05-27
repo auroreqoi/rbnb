@@ -7,20 +7,37 @@
   </div>
 </div>
 
-<div class="cards-home">
-  <div class="card-category-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path 'ruche_aménagé.jpg'%>)">
-    Ruche Aménagé
-  </div>
+<div class="card-about-us">
+  <p>Chez Air Bee n Bee, nous voulons vous offrir la meilleure expérience possible pour partir en vacances
+  afin de reposer vos ailes fatiguées par les dures journées de labeur, dans la recherche de pollen toujours
+  nécessaire à votre ruche, ou par la gestion continue de vos abeilles</p>
+  <p>Vous trouverez un large choix de ruches pour satisfaire tous vos souhaits, proposées par des abeilles
+  soucieuses de votre bien être</p>
 
-  <div class="card-category-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path 'nature.jpg'%>)">
-    Retour à la Nature
-  </div>
 
-  <div class="card-category-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path 'famille_nombreuse.jpg'%>)">
-    Famille Nombreuse
-  </div>
+</div>
+<div class="cards-home" >
+  <%= link_to hives_path(category: "Ruche Aménagée"), class: "card-home-link" do %>
+    <div class="card-category-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path 'ruche_aménagé.jpg'%>)">
+      Ruche Aménagée
+    </div>
+  <% end %>
 
-  <div class="card-category-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path 'love_hive.jpg'%>)">
-    Abeilles amoureuses
-  </div>
+  <%= link_to hives_path(category: "Retour à la Nature"), class: "card-home-link" do %>
+    <div class="card-category-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path 'nature.jpg'%>)">
+      Retour à la Nature
+    </div>
+  <% end %>
+
+  <%= link_to hives_path(category: "Famille Nombreuse"), class: "card-home-link" do %>
+    <div class="card-category-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path 'famille_nombreuse.jpg'%>)">
+      Famille Nombreuse
+    </div>
+  <% end %>
+
+  <%= link_to hives_path(category: "Abeilles Amoureuses"), class: "card-home-link" do %>
+    <div class="card-category-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=image_path 'love_hive.jpg'%>)">
+      Abeilles Amoureuses
+    </div>
+  <% end %>
 </div>

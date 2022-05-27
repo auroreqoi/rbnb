@@ -1,7 +1,15 @@
 
 <div class="container col-9">
 
-  <h1 class="text-center mt-4">Liste de mes validations</h1>
+  <ul class="list-inline tabs-underlined">
+    <li>
+      <h4><%= link_to 'mes réservations', reservations_path, class: "tab-underlined" %></h4>
+    </li>
+    <li>
+      <% resa = current_user.queen_reservations.where(status: 'pending').count %>
+      <h4><%= link_to "mes validations (#{resa})", queen_reservations_path, class: "tab-underlined active" %></h4>
+    </li>
+  </ul>
 
   <% @reservations.each do |reservation| %>
     <div class="card-product-index-reserv-user py-2 px-4 m-5">
@@ -44,10 +52,7 @@
             <p class="button-refused">Réservation refusée...</p>
           <% end %>
         </div>
-
       </div>
-
     </div>
   <% end %>
-
 </div>

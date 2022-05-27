@@ -34,7 +34,7 @@ file_shiyun = File.open("db/fixtures/bee4.png")
 shiyun.photo.attach(io: file_shiyun, filename: 'bee4.png', content_type: 'image/png')
 shiyun.save!
 
-val = User.create!(first_name: "Val", last_name: "V.", email: "valentin@test.com", password: "password")
+val = User.create!(first_name: "Valentin", last_name: "V.", email: "valentin@test.com", password: "password")
 file_val = File.open("db/fixtures/bee2.png")
 val.photo.attach(io: file_val, filename: 'bee2.png', content_type: 'image/png')
 val.save!
@@ -141,3 +141,13 @@ Reservation.create!(user: hugo, hive: hive_jj_1, total_price: 66, start_date: Da
 Reservation.create!(user: jj, hive: hive_miel_pops_1, total_price: 69, start_date: Date.new(2022, 7, 1), end_date: Date.new(2020, 7, 11), status: "pending")
 Reservation.create!(user: maya, hive: hive_hugo_1, total_price: 51, start_date: Date.new(2020, 8, 1), end_date: Date.new(2020, 8, 7), status: "declined")
 Reservation.create!(user: miel_pops, hive: hive_hugo_1, total_price: 59.5, start_date: Date.new(2020, 8, 1), end_date: Date.new(2020, 8, 8), status: "accepted")
+
+Review.create!(user: corentin, hive:hive_maya_1, rating: 2, content: "Une ruche conforme à l'image, tout en plastique, sans verdure, sans saveur.")
+Review.create!(user: hugo, hive:hive_maya_1, rating: 1.5, content: "Je ne m'attendais à rien mais je suis quand même déçu")
+Review.create!(user: jj, hive:hive_maya_1, rating: 3, content: "Vu le prix payé, le service est plûtot correct")
+Review.create!(user: shiyun, hive:hive_maya_1, rating: 1, content: "Fuyez pauvres fous!")
+
+Review.create!(user: val, hive:hive_shiyun_1, rating: 5, content: "Une ruche parfaitement situé, entre montagne et forêt, offrant le calme nécessaire pour se ressourcer")
+Review.create!(user: aurore, hive:hive_shiyun_1, rating: 4.5, content: "Un véritable écrin de paradis")
+
+Review.create!(user: corentin, hive:hive_jj_1, rating: 5, content: "J'ai tellement fumé que je n'ai pas arrêté de planer")

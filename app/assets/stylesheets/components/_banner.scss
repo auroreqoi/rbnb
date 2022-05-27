@@ -25,9 +25,14 @@
 }
 
 .banner-button {
-  color: black;
+  color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: $light-orange-no-opa;
+  background: #fed8b1;
   transition: background 0.3s ease;
+}
+
+.banner-button:hover {
+  background: #f8a68d;
+  color: white;
 }

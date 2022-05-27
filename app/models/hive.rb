@@ -2,6 +2,7 @@ class Hive < ApplicationRecord
   belongs_to :queen, class_name: 'User'
   has_many :reservations
   has_many :reviews, dependent: :destroy
+  has_many :likes, dependent: :destroy
   has_one_attached :photo
 
   CATEGORIES = ["Ruche Aménagée", "Retour à la Nature", "Famille Nombreuse", "Abeilles Amoureuses"]

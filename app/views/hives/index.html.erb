@@ -2,23 +2,23 @@
   <div>
     <div class="container">
       <div class="d-flex align-items-center justify-space-between my-2">
-        <%= link_to hives_path(query: params[:query], order: params[:order]), class: "flex-fill text-center btn btn-ghost category-filter" do %>
+        <%= link_to hives_path(query: params[:query], order: params[:order]), class: "flex-fill text-center btn btn-ghost category-filter #{'btn-active' unless params[:category].present?}" do %>
           <i class="fab fa-forumbee"></i>
           <p class="m-0">Toutes les catégories</p>
         <% end %>
-        <%= link_to hives_path(query: params[:query], order: params[:order], category: "Ruche Aménagée"), class: "flex-fill text-center btn btn-ghost category-filter" do %>
+        <%= link_to hives_path(query: params[:query], order: params[:order], category: "Ruche Aménagée"), class: "flex-fill text-center btn btn-ghost category-filter #{'btn-active' if params[:category] == 'Ruche Aménagée'}" do %>
           <i class="fas fa-home"></i>
           <p class="m-0">Ruche Aménagée</p>
         <% end %>
-         <%= link_to hives_path(query: params[:query], order: params[:order], category: "Retour à la Nature"), class: "flex-fill text-center btn btn-ghost category-filter" do %>
+         <%= link_to hives_path(query: params[:query], order: params[:order], category: "Retour à la Nature"), class: "flex-fill text-center btn btn-ghost category-filter #{'btn-active' if params[:category] == 'Retour à la Nature'}" do %>
           <i class="fas fa-leaf"></i>
           <p class="m-0">Retour à la Nature</p>
         <% end %>
-         <%= link_to hives_path(query: params[:query], order: params[:order], category: "Famille Nombreuse"), class: "flex-fill text-center btn btn-ghost category-filter" do %>
+         <%= link_to hives_path(query: params[:query], order: params[:order], category: "Famille Nombreuse"), class: "flex-fill text-center btn btn-ghost category-filter #{'btn-active' if params[:category] == 'Famille Nombreuse'}" do %>
           <i class="fas fa-users"></i>
           <p class="m-0">Famille Nombreuse</p>
         <% end %>
-         <%= link_to hives_path(query: params[:query], order: params[:order], category: "Abeilles Amoureuses"), class: "flex-fill text-center btn btn-ghost category-filter" do %>
+         <%= link_to hives_path(query: params[:query], order: params[:order], category: "Abeilles Amoureuses"), class: "flex-fill text-center btn btn-ghost category-filter #{'btn-active' if params[:category] == 'Abeilles Amoureuses'}" do %>
          <i class="far fa-kiss-wink-heart"></i>
           <p class="m-0">Abeilles Amoureuses</p>
         <% end %>
@@ -26,6 +26,8 @@
       <div class="w-100 d-flex justify-content-between align-items-center">
         <% if params[:category] %>
           <p class="mb-0">Résultats pour <%= params[:category] %></p>
+        <% else %>
+          <p></p>
         <% end %>
         <div class="dropdown-sort my-2">
           <button class="btn btn-ghost btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

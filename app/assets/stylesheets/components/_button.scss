@@ -14,8 +14,8 @@
 .btn-ghost {
   font-size: 16.5px;
   margin-right: 8px;
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
+  color: #212121;
+  border: 1px solid #8D8DAA;
   padding: 8px 24px;
   border-radius: 50px;
   font-weight: lighter;
@@ -25,4 +25,18 @@
 
 .btn-ghost:hover {
   opacity: 1;
+  color: #001E6C;
+}
+
+.btn-active {
+  font-size: 16px;
+  font-weight: bold;
+  color:#E45826;
+  border: 1px solid #1B1A17;
+  background-color: #E1E5EA;
+}
+
+.btn-active:hover {
+  opacity: 1;
+  color:#E45826;
 }

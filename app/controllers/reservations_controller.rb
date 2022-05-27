@@ -28,6 +28,16 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
     @reservation.status = "accepted"
     @reservation.save
+
+    # To deliver this notification:
+    ReservationNotification.with(reservation: @reservation).deliver_later(@reservation.user)
+    # ReservationNotification.with(post: @reservation.status).deliver(@reservation.user)
+
+    # Instantiate a new notification
+    # notification = CommentNotification.with(comment: @reservation.status)
+
+    # Deliver notification in background job
+    # notification.deliver_later(@comment.post.author)
     redirect_to queen_reservations_path
   end
 

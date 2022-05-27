@@ -54,3 +54,11 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
+
+.card-home-link {
+  text-decoration: none;
+  &:hover{
+    transform: scale(1.02);
+    pointer-events: pointer;
+  }
+}

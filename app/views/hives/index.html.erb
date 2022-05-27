@@ -43,6 +43,7 @@
     </div>
     <% @hives.each do |hive| %>
       <div class="relative">
+
         <% if Like.find_by(user: current_user, hive: hive) %>
           <%= render "likes/unlike_button", like: Like.find_by(user: current_user, hive: hive) %>
         <% else %>

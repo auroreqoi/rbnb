@@ -24,7 +24,6 @@ export default class extends Controller {
   }
 
   hovering(event) {
-    console.log(event.currentTarget)
     const hiveId = event.currentTarget.dataset.id
     const markerId = `marker-${hiveId}`
 
@@ -34,7 +33,6 @@ export default class extends Controller {
   }
 
   leaving(event) {
-    console.log(event.currentTarget)
     const hiveId = event.currentTarget.dataset.id
     const markerId = `marker-${hiveId}`
 

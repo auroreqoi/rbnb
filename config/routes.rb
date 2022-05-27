@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :hives, only: [:index, :show, :new, :create] do
     resources :reservations, only: [:new, :create]
+    resources :likes, only: [:create]
     resources :reviews, only: [:new, :create]
   end
 
@@ -15,4 +16,6 @@ Rails.application.routes.draw do
   namespace :queen do
     resources :reservations, only: [:index]
   end
+
+  resources :likes, only: :destroy
 end

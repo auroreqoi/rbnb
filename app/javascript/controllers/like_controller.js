@@ -1,12 +1,39 @@
 import { Controller } from "stimulus"
+import { csrfToken } from "@rails/ujs"
 
 export default class extends Controller {
-  connect() {
-  }
+  static targets = ["button"]
+  static values = { id: Number }
+
   like(event) {
     event.preventDefault()
+
     const seed = event.currentTarget
-    // const seed = document.getElementById(seedId)
-    seed.style.color = "#FFD470"
+    fetch(`/hives/${this.idValue}/likes`, {
+      method: "POST",
+      headers: { "Accept": "application/json", "X-CSRF-Token": csrfToken() }
+    })
+      .then(response => response.json())
+      .then((data) => {
+        if (data.success) {
+          this.buttonTarget.outerHTML = data.button
+        }
+      })
+  };
+
+  unlike(event) {
+    event.preventDefault()
+
+    const seed = event.currentTarget
+    fetch(`/likes/${this.idValue}`, {
+      method: "DELETE",
+      headers: { "Accept": "application/json", "X-CSRF-Token": csrfToken() }
+    })
+      .then(response => response.json())
+      .then((data) => {
+        if (data.success) {
+          this.buttonTarget.outerHTML = data.button
+        }
+      })
   };
 }

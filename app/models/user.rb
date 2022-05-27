@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :queen_reservations, through: :hives, source: :reservations # => reservations as an owner
   has_many :reservations # => reservations as an renter
   has_many :notifications, as: :recipient, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   validates :first_name, :last_name, presence: true
 

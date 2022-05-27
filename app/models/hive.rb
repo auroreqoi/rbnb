@@ -1,6 +1,7 @@
 class Hive < ApplicationRecord
   belongs_to :queen, class_name: 'User'
   has_many :reservations
+  has_many :reviews, dependent: :destroy
   has_one_attached :photo
 
   CATEGORIES = ["Ruche Aménagée", "Retour à la Nature", "Famille Nombreuse", "Abeilles Amoureuses"]
@@ -8,6 +9,7 @@ class Hive < ApplicationRecord
   validates :name, :description, :address, :price_per_day, :category, presence: true
   validates :name, uniqueness: true
   validates :category, inclusion: { in: CATEGORIES }
+  validates :description, length: { maximum: 1000 }
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
